@@ -267,7 +267,7 @@ var heightTable = 18;
 var cont_correctAnswer = 0;
 
 function start() {
-  setInterval(() => atualizarCronometro(), 1000)
+  var intervalo = setInterval(() => atualizarCronometro(), 1000)
   cont_correctAnswer = 0;
   bt_start.style.display = 'none';
   bt_destroyGame.style.display = 'block';
@@ -349,7 +349,7 @@ function gameSequence() {
 
 function pontuation() {
   div_information.style.display = 'block';
-  pararCronometro()
+  // pararCronometro()
   div_information.innerHTML = `
     <h1 style="text-align: center;">Parabéns!!</h1><br><br><p style="text-align: center;">Você finalizou o jogo</p><br><br>
     <p>Você teve um total de ${qtd_acertos + qtd_erros} tentativas, com ${qtd_acertos} acertos e ${qtd_erros}erros. <br>
@@ -456,6 +456,6 @@ function atualizarCronometro(){
 }
 
 function pararCronometro(){
-  clearInterval(interval)
-  interval = null
+  clearInterval(intervalo)
+  intervalo = null
 }
