@@ -349,8 +349,13 @@ function gameSequence() {
 
 function pontuation() {
   div_information.style.display = 'block';
-
-  div_information.innerHTML = '<h1 style="text-align: center;">Parabéns!!</h1><br><br><p style="text-align: center;">Você finalizou o jogo</p><br><br>';
+  pararCronometro()
+  div_information.innerHTML = `
+    <h1 style="text-align: center;">Parabéns!!</h1><br><br><p style="text-align: center;">Você finalizou o jogo</p><br><br>
+    <p>Você teve um total de ${qtd_acertos + qtd_erros} tentativas, com ${qtd_acertos} acertos e ${qtd_erros}erros. <br>
+      Sua pontuação final foi de ${pontuacao}
+    </p>
+  `;
 }
 
 function renderGrid() {
@@ -410,7 +415,7 @@ function verify() {
       cont_correctAnswer++;
       qtd_acertos++
       pontuacao += parseFloat(pontuacao_base.toFixed(2))
-      div_pontuacao.innerHTML = `Pontuação: ${pontuacao}`;
+      div_pontuacao.innerHTML = `Pontuação: ${pontuacao.toFixed(2)}`;
     }
     else {
       div_verifiedAnswer.classList.add('wrongAnswer');
