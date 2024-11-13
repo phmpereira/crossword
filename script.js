@@ -1,22 +1,22 @@
 var special_words = ['CPU', 'ULA', 'Registradores', 'RAM', 'ROM', 'EPROM', 'FLASH', 'Memória de Massa', 'DMA', 'CS', 'Adress Bus', 'Data Bus', 'I5', 'I7', 'Dual Core', 'Quad Core'];
 
 var questions_list = [
-  'Qual é a sigla para Central Process Unit?',
-  'Um circuto digital que realiza operações lógicas e aritméticas. Qual é o nome deste componente?',
-  'Tipo de memória que se encontra no topo da hierarquia de memória',
-  'Tipo de memória volátil que tem como nome Random Acess Memory. Qual é a sigla deste componente?',
-  'Tipo de memória não volátil que oferece dados apenas para leitura',
-  'Tipo de memória não volátil que precisa ter seu chip exposto a luz ultravioleta para apagar seu conteúdo',
-  'Tipo particular de EEPROM que mantém as informações armazenadas sem a necessidade de uma fonte de energia elétrica',
-  'Tipo de memória que precisa ter seu conteúdo copiado na RAM para poder ser executado pela CPU',
-  'Permite que periféricos acessem diretamente a RAM sem ocupar processamento',
-  'Também conhecido como Slave Select (SS). Usado para selecionar um ou um conjunto de circuitos que estão conectados no computador',
-  'Grupo de linhas ou trilhas usadas para se referir a um endereço físico na memória. O número de trilhas determina a quantidade de endereços na memória física',
-  'Também chamado de Memory Bus. É responsável para carregar os dados.',
-  'Modelo de processador desenvolvido pela Intel qu teve sua primeira versão lançada em setembro de 2009',
-  'Modelo de processador desenvolvido pela Intel qu teve sua primeira versão lançada em novembro de 2008',
-  'Tipo de processador que possui dois processadores ou melhor dizendo ‘dois centros, núcleos ou cores de execução‘ no mesmo circuito integrado.  Cada core tem sua própria memória cash e controlador o que permite que funcione mais efetivamente do que um processador single',
-  'Segue o mesmo princípio de um dual-core, mas agora em teoria tem o dobro da capacidade de processamento'
+  'Sigla do principal componente de hardware de um computador.',
+  'Sigla do componente responsável por executar cálculos lógicos e matemáticos.',
+  'Componentes de alta velocidade, estão no topo da hierarquia de memória',
+  'Tipo de memória volátil, permitindo a leitura e a escrita rápida de dados, mas ao computador ser desligado, esses dados são apagados',
+  'Memória não volátil, permitindo apenas a leitura. Armazena instruções e firmwares que são essenciais para o funcionamento do computador',
+  'Memória não volátil que permite reprogramação dos dados.',
+  'Memórias não volátil e reprogramável eletronicamente. Oferece alta densidade de armazenamento',
+  'Armazenamento de longo prazo, usado para armazenar S.O, programas e arquivos de dados',
+  'O que permite que componentes de hardware acessem diretamente a memória',
+  'Sinal utilizado em sistemas eletrônicos, especialmente em comunicação serial para selecionar um dispositivo específico entre vários conectados ao barramento.',
+  'Conjunto de linhas ou trilhas de conexão dentro de um sistema usado para transferir endereços entre a CPU e outros componentes',
+  'Barramento usado para transportar os dados propriamente ditos entre o processador, memória e outros dispositivos',
+  'Modelo de processador fabricado pela intel, com sua primeira versão em 2009, com seus núcleos variando de 4 a 10.',
+  'Modelo de processador fabricado pela intel, com sua primeira versão em 2008, sendo ideal para multitarefas e tarefas pesadas.',
+  'Tipo de processador que possuí dois núcleos e que pode executar duas tarefas simultaneamente.',
+  'Segue o mesmo princípio da anterior, porém com mais núcleos (4), oferecendo desempenho superior em atividades mais exigentes'
 ];
 
 var filledCell = [2, 20, 38, 133, 134, 135, 59, 77, 95, 113, 131, 149,
