@@ -1,3 +1,11 @@
+var qtd_acertos = 0
+var qtd_erros = 0
+var pontuacao = 0
+var pontuacao_base = 100
+
+var segundos = 0
+var minutos = 0
+
 var special_words = ['cpu', 'ula', 'registradores', 'ram', 'rom', 'eprom', 'flash', 'memória de massa', 'dma', 'cs', 'adress bus', 'data bus', 'i5', 'i7', 'dual core', 'quad core'];
 
 var questions_list = [
@@ -259,6 +267,7 @@ var heightTable = 18;
 var cont_correctAnswer = 0;
 
 function start() {
+  setInterval(() => updateTime(), 1000)
   cont_correctAnswer = 0;
   bt_start.style.display = 'none';
   bt_destroyGame.style.display = 'block';
@@ -399,13 +408,16 @@ function verify() {
       div_verifiedAnswer.classList.add('correctAnswer');
       div_verifiedAnswer.innerHTML = '<br>Resposta Correta!';
       cont_correctAnswer++;
+      qtd_acertos++
+      pontuacao += pontuacao_base
     }
     else {
       div_verifiedAnswer.classList.add('wrongAnswer');
       div_verifiedAnswer.innerHTML = '<br>Resposta Incorreta, tente novamente';
+      qtd_erros++
     }
     setTimeout(function () {
-      div_verifiedAnswer.style.display = 'block';
+      div_verifiedAnswer.style.display = 'flex';
     }, 500);
 
     setTimeout(function () {
@@ -418,4 +430,21 @@ function verify() {
   else {
     alert('Por Favor, digite uma resposta na caixa de texto');
   }
+}
+
+function updateTime(){
+  segundos++
+  if (segundos === 60) {
+    segundos = 0
+    minutos++
+  }
+
+  if(segundos % 2 == 0 ){
+    pontuacao_base = Math.max(10, pontuacao_base - (Math.random() * 10))
+  }
+  
+
+  let minutosFormatado = minutos < 10 ? "0" + minutos : minutos
+  let segundosFormatado = segundos < 10 ? "0" + segundos : segundos
+  div_cronometro.innerHTML = `Tempo: ${minutosFormatado}:${segundosFormatado}`
 }
