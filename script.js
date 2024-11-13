@@ -267,7 +267,7 @@ var heightTable = 18;
 var cont_correctAnswer = 0;
 
 function start() {
-  setInterval(() => updateTime(), 1000)
+  setInterval(() => atualizarCronometro(), 1000)
   cont_correctAnswer = 0;
   bt_start.style.display = 'none';
   bt_destroyGame.style.display = 'block';
@@ -409,7 +409,8 @@ function verify() {
       div_verifiedAnswer.innerHTML = '<br>Resposta Correta!';
       cont_correctAnswer++;
       qtd_acertos++
-      pontuacao += pontuacao_base
+      pontuacao += parseFloat(pontuacao_base.toFixed(2))
+      div_pontuacao.innerHTML = `Pontuação: ${pontuacao}`;
     }
     else {
       div_verifiedAnswer.classList.add('wrongAnswer');
@@ -432,14 +433,14 @@ function verify() {
   }
 }
 
-function updateTime(){
+function atualizarCronometro(){
   segundos++
   if (segundos === 60) {
     segundos = 0
     minutos++
   }
 
-  if(segundos % 2 == 0 ){
+  if(segundos % 10 == 0 ){
     pontuacao_base = Math.max(10, pontuacao_base - (Math.random() * 10))
   }
   
@@ -447,4 +448,9 @@ function updateTime(){
   let minutosFormatado = minutos < 10 ? "0" + minutos : minutos
   let segundosFormatado = segundos < 10 ? "0" + segundos : segundos
   div_cronometro.innerHTML = `Tempo: ${minutosFormatado}:${segundosFormatado}`
+}
+
+function pararCronometro(){
+  clearInterval(interval)
+  interval = null
 }
