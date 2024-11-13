@@ -352,8 +352,8 @@ function pontuation() {
   // pararCronometro()
   div_information.innerHTML = `
     <h1 style="text-align: center;">Parabéns!!</h1><br><br><p style="text-align: center;">Você finalizou o jogo</p><br><br>
-    <p>Você teve um total de ${qtd_acertos + qtd_erros} tentativas, com ${qtd_acertos} acertos e ${qtd_erros}erros. <br>
-      Sua pontuação final foi de ${pontuacao}
+    <p>Você teve um total de ${qtd_acertos + qtd_erros} tentativas, com ${qtd_acertos} acertos e ${qtd_erros} erros. <br>
+      Sua pontuação final foi de ${pontuacao.toFixed(2)}
     </p>
   `;
 }
