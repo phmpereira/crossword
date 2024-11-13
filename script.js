@@ -1,4 +1,4 @@
-var special_words = ['CPU', 'ULA', 'Registradores', 'RAM', 'ROM', 'EPROM', 'FLASH', 'Memória de Massa', 'DMA', 'CS', 'Adress Bus', 'Data Bus', 'I5', 'I7', 'Dual Core', 'Quad Core'];
+var special_words = ['cpu', 'ula', 'registradores', 'ram', 'rom', 'eprom', 'flash', 'memória de massa', 'dma', 'cs', 'adress bus', 'data bus', 'i5', 'i7', 'dual core', 'quad core'];
 
 var questions_list = [
   'Sigla do principal componente de hardware de um computador.',
@@ -390,11 +390,12 @@ function paintCells() {
 }
 
 function verify() {
-  var answer = input_answer.value;
+  var answer = input_answer.value.toLowerCase();
 
   if (answer != '') {
     // answer = answer.toLowerCase();
     if (answer == special_words[cont_correctAnswer]) {
+      div_verifiedAnswer.classList.remove('wrongAnswer');
       div_verifiedAnswer.classList.add('correctAnswer');
       div_verifiedAnswer.innerHTML = '<br>Resposta Correta!';
       cont_correctAnswer++;
