@@ -262,7 +262,7 @@ function start() {
   cont_correctAnswer = 0;
   bt_start.style.display = 'none';
   bt_destroyGame.style.display = 'block';
-  div_questions.style.display = 'block';
+  div_questions.style.visibility = 'visible';
   div_information.innerHTML = '';
   renderGrid();
   gameSequence();

@@ -60,6 +60,12 @@ button {
   background-color: #85C1E9;
   width: 700px;
   margin: auto;
+  display: flex;
+  height: fit-content;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .button {
@@ -75,6 +81,7 @@ button {
 #input_answer {
   width: 100px;
   margin: auto;
+  
 }
 
 .deadCell {
@@ -111,10 +118,9 @@ footer p {
 #div_verifiedAnswer {
   width: 500px;
   height: 70px;
-  /* margin: auto; */
+  border-radius: 10px;
   text-align: center;
   font-size: 20px;
-  /* vertical-align: center; */
   margin-bottom: 20px;
   position: absolute;
   bottom: 0;
