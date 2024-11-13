@@ -111,17 +111,21 @@ footer p {
 #div_verifiedAnswer {
   width: 500px;
   height: 70px;
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
   font-size: 20px;
-  vertical-align: center;
+  /* vertical-align: center; */
   margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .correctAnswer {
   background-color: #58D68D;
   color: #196F3D;
   border: 1px #196F3D solid;
+  animation: fade-in 1s ease, fade-out 1s 1s ease;
 }
 
 .wrongAnswer {
@@ -129,4 +133,24 @@ footer p {
   color: #7B241C;
   border: 1px #7B241C solid;
 
+}
+
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
 }

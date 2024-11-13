@@ -410,7 +410,7 @@ function verify() {
 
     setTimeout(function () {
       div_verifiedAnswer.style.display = 'none';
-    }, 3000);
+    }, 2000);
 
     input_answer.value = '';
     gameSequence();
